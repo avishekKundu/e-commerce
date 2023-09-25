@@ -25,7 +25,7 @@ class SideBar extends Component {
                             placeholder="Max Price" required />
                     </li>
                     <li>
-                        <button class="btn btn-outline-primary border border-2" id="btnFilter">
+                        <button class="btn btn-outline-primary border border-2" id="btnFilter" >
                             Filter
                         </button>
                     </li>
