@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { prodCollections } from "./ProdCollection";
+import prodCollections from "./ProdCollection";
 
 function DisplayProducts({ category, min, max }) {
     const filteredProducts = prodCollections.filter((prod) => (
@@ -19,9 +19,6 @@ function DisplayProducts({ category, min, max }) {
                         <div className="card-body cardBody">
                             <p className="card-text itemName">{prod.name}</p>
                             <p className="card-text itemPrice">Price: &#8377; {prod.price}</p>
-                            <div>
-                                <button></button>
-                            </div>
                             <a href='##' className="btn btn-primary btnBuy">BUY</a>
                         </div>
                     </div>
@@ -41,4 +38,4 @@ class ProductList extends Component {
     }
 }
 
-export default ProductList;
+export { DisplayProducts, ProductList };

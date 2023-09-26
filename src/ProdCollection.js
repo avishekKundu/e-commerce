@@ -1,4 +1,4 @@
-export const prodCollections = [
+const prodCollections = [
     { name: 'OnePlus Nord CE 2 Lite 5G', category: 'Mobile', price: 17999, image: `${process.env.PUBLIC_URL}/Images/Mobile/imgPhn1.jpg`, source: 'https://www.amazon.in/OnePlus-Nord-Lite-128GB-Storage/dp/B09WQYFLRX/ref=sr_1_5?qid=1694493064&refinements=p_36%3A1318506031&rnid=1318502031&s=electronics&sr=1-5&th=1' },
     { name: 'Realme narzo N55', category: 'Mobile', price: 10999, image: `${process.env.PUBLIC_URL}/Images/Mobile/imgPhn2.jpg`, source: 'https://www.amazon.in/realme-Segment-Fastest-Charging-High-res/dp/B0BZ479WZD/ref=sr_1_1?qid=1694499589&refinements=p_36%3A1318506031%2Cp_72%3A1318476031&rnid=1318475031&s=electronics&sr=1-1&th=1' },
     { name: 'iQOO Z6 Lite 5G', category: 'Mobile', price: 13999, image: `${process.env.PUBLIC_URL}/Images/Mobile/imgPhn3.jpg`, source: 'https://www.amazon.in/iQOO-Stellar-Snapdragon-Segment-Included/dp/B07WHSR1NR/ref=sr_1_8?qid=1694499589&refinements=p_36%3A1318506031%2Cp_72%3A1318476031&rnid=1318475031&s=electronics&sr=1-8&th=1' },
@@ -25,3 +25,4 @@ export const prodCollections = [
     { name: 'Rytras Women\'s Printed Straight Kurta and Pant Set', category: 'Cloth', price: 469, image: `${process.env.PUBLIC_URL}/Images/Cloth/imgCloth4.jpg`, source: 'https://www.amazon.in/rytras-Womens-Printed-Straight-Kurta/dp/B0C8NDLGFN/ref=zg_bsnr_g_1953602031_sccl_1/258-4751070-7450829?th=1&psc=1' }
 ];
 
+export default prodCollections;
