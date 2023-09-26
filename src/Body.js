@@ -42,7 +42,7 @@ class Product extends Component {
         console.log('increment');
         this.setState((prevState) => {
             const updateItem = [...prevState.filteredProducts];
-            updateItem[index] = {...updateItem[index], quantity: updateItem[index].quantity + 1}
+            updateItem[index] = {...updateItem[index], quantity: updateItem[index].quantity + 1};
             return { filteredProducts: updateItem };
         });
     }
@@ -61,7 +61,7 @@ class Product extends Component {
         this.setState((prevState) => {
             const updateItem = [...prevState.filteredProducts];
             if (updateItem[index].quantity > 0)
-            updateItem[index] = {...updateItem[index], quantity: updateItem[index].quantity - 1}
+            updateItem[index] = {...updateItem[index], quantity: updateItem[index].quantity - 1};
             return { filteredProducts: updateItem };
         });
     }
