@@ -148,9 +148,10 @@
 
 .imgContent {
   padding: 8px 18px;
+
   &:hover {
-      box-shadow: 0 0 17px;
-      cursor: pointer;
+    box-shadow: 0 0 17px;
+    cursor: pointer;
   }
 }
 
@@ -161,6 +162,37 @@
   font-family: 'Ubuntu', sans-serif;
 }
 
-.btnBuy:hover {
-  box-shadow: 0 0 20px;
+.buyItem {
+  width: 250px;
+  padding: 10px 20px;
+}
+
+.addItem {
+  height: 35px;
+  margin-top: 5px;
+  padding: 5px 5px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+#dispQuantity {
+  height: 35px;
+  margin: 5px 5px;
+  padding: 0 10px;
+}
+
+.removeItem {
+  height: 35px;
+  margin-top: 5px;
+  padding: 5px 5px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.btnBuy {
+  margin-left: 20px;
 }

@@ -8,7 +8,10 @@ class Product extends Component {
             category: 'All',
             minPrice: '',
             maxPrice: '',
-            filteredProducts: prodCollections
+            filteredProducts: prodCollections.map((prod) => ({
+                ...prod,
+                quantity: 0,
+            }))
         }
     }
 
@@ -32,7 +35,35 @@ class Product extends Component {
             && (!maxPrice || prod.price <= maxPrice)
         ));
 
-        this.setState({ filteredProducts });
+        this.setState({ filteredProducts: filteredProducts.map((prod) => ({ ...prod, quantity: 0 })) });
+    }
+
+    incrementItem  = (index )=> {
+        console.log('increment');
+        this.setState((prevState) => {
+            const updateItem = [...prevState.filteredProducts];
+            updateItem[index] = {...updateItem[index], quantity: updateItem[index].quantity + 1}
+            return { filteredProducts: updateItem };
+        });
+    }
+
+    // incrementItem(index){
+    //     console.log('increment');
+    //     let initialItem = [...this.state.filteredProducts];
+    //     console.log(initialItem[index])
+    //     initialItem[index] = {...initialItem[index], quantity: initialItem[index].quantity + 1}
+    //     this.setState({filteredProducts: initialItem});
+    //     console.log(initialItem[index]);
+    //     return;
+    // }
+
+    decrementItem = (index) => {
+        this.setState((prevState) => {
+            const updateItem = [...prevState.filteredProducts];
+            if (updateItem[index].quantity > 0)
+            updateItem[index] = {...updateItem[index], quantity: updateItem[index].quantity - 1}
+            return { filteredProducts: updateItem };
+        });
     }
 
     render() {
@@ -69,7 +100,7 @@ class Product extends Component {
                 </div>
                 <div className="container productContainer">
                     <ul className="list-group" id="product-list">
-                        {filteredProducts.map((prod) => (
+                        {filteredProducts.map((prod, index) => (
                             <li key={prod.id} className="itemLists">
                                 <div className="card p-3 listContainer">
                                     <a href={prod.source} id="imgLink">
@@ -78,7 +109,12 @@ class Product extends Component {
                                     <div className="card-body cardBody">
                                         <p className="card-text itemName">{prod.name}</p>
                                         <p className="card-text itemPrice">Price: &#8377; {prod.price}</p>
-                                        <a href='##' className="btn btn-primary btnBuy">BUY</a>
+                                        <div className="container d-flex buyItem">
+                                            <i className="fa-solid fa-minus addItem" style={{ color: "black" }} onClick={() => this.decrementItem(index)}></i>
+                                            <p id="dispQuantity">{prod.quantity}</p>
+                                            <i className="fa-solid fa-plus removeItem" style={{ color: "black" }} onClick={()=> this.incrementItem(index)}></i>
+                                            <a href='##' className="btn btn-primary btnBuy">BUY</a>
+                                        </div>
                                     </div>
                                 </div>
                             </li>
