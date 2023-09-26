@@ -141,8 +141,9 @@
 }
 
 .listContainer {
-  border: 2px solid;
+  border: 3px solid;
   height: auto;
+  border-radius: 10px;
 }
 
 .imgContent {
