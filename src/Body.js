@@ -8,7 +8,7 @@ class Product extends Component {
             category: 'All',
             minPrice: '',
             maxPrice: '',
-            filterProducts: prodCollections
+            filteredProducts: prodCollections
         }
     }
 
@@ -32,11 +32,11 @@ class Product extends Component {
             && (!maxPrice || prod.price <= maxPrice)
         ));
 
-        this.setState({ filteredProducts })
+        this.setState({ filteredProducts });
     }
 
     render() {
-        const { category, minPrice, maxPrice, filterProducts } = this.state;
+        const { category, minPrice, maxPrice, filteredProducts } = this.state;
         return (
             <>
                 <div className="container text-bg-secondary inputBody">
@@ -69,7 +69,7 @@ class Product extends Component {
                 </div>
                 <div className="container productContainer">
                     <ul className="list-group" id="product-list">
-                        {filterProducts.map((prod) => (
+                        {filteredProducts.map((prod) => (
                             <li key={prod.id} className="itemLists">
                                 <div className="card p-3 listContainer">
                                     <a href={prod.source} id="imgLink">
