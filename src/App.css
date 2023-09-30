@@ -62,8 +62,6 @@
   font-family: "Noto Sans KR", sans-serif;
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap");
-
 .footContainer {
   background-color: rgb(233, 241, 243);
   color: rgb(12, 13, 13);
